@@ -62,6 +62,13 @@ export const InfoItem = styled.div`
 
 export const Catalog = styled.div`
   margin-top: 6.4rem;
+
+  h2 {
+    font-family: 'Baloo 2';
+    font-size: 2rem;
+    font-weight: 800;
+    color: ${(props) => props.theme['subtitle']};
+  }
 `
 export const Cards = styled.div`
   display: grid;

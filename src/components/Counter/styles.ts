@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const CounterContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   background: ${(props) => props.theme['base-button']};
 
@@ -18,5 +19,12 @@ export const CounterContainer = styled.div`
 `
 
 export const Button = styled.button`
-  
+  border: 0;
+  background: ${(props) => props.theme['base-button']};
+
+  cursor: pointer;
+
+  &:hover {
+    fill: ${(props) => props.theme['purple-dark']};
+  }
 `

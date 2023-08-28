@@ -60,6 +60,8 @@ export const PriceContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  margin: auto;
 `
 
 export const Price = styled.div`
@@ -67,6 +69,16 @@ export const Price = styled.div`
   align-items: center;
 
   margin-right: 2.375rem;
+
+  p {
+    font-size: 0.875rem;
+    margin-right: 0.25rem;
+  }
+
+  span {
+    font-family: 'Baloo 2';
+    font-size: 1.5rem;
+  }
 `
 
 export const Buy = styled.div`
