@@ -1,6 +1,8 @@
-import { Bank, CreditCard, Money } from "phosphor-react";
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { Header } from "../../components/Header";
 
+
+import { CartItem } from "../../components/CartItem";
 import {
   Button,
   CheckoutContainer,
@@ -9,10 +11,20 @@ import {
   FormContainer,
   FormTitle,
   GridForm,
+  InputCep,
+  InputCity,
+  InputComplement,
+  InputNeighborhood,
+  InputNumber,
+  InputStreet,
+  InputUF,
   Label,
   Paymment,
   PaymmentMethods,
+  Subtotal,
+  SubtotalInfo,
   Summary,
+  SummaryContainer,
   SummaryTitle,
   Title
 } from './styles';
@@ -28,25 +40,30 @@ export function Checkout() {
 
           <Form>
             <Title>
-              <h2>Endereço de Entrega</h2>
-              <p>Informe o endereço onde deseja receber seu pedido</p>
+              <div>
+                <MapPinLine size={24} color="#C47F17" />
+              </div>
+              <div>
+                <h2>Endereço de Entrega</h2>
+                <p>Informe o endereço onde deseja receber seu pedido</p>
+              </div>
             </Title>
 
             <GridForm>
               <div>
-                <input type="text" placeholder="CEP" />
+                <InputCep type="text" placeholder="CEP" />
               </div>
               <div>
-                <input type="text" placeholder="Rua" />
+                <InputStreet type="text" placeholder="Rua" />
               </div>
               <div>
-                <input type="text" placeholder="Número" />
-                <input type="text" placeholder="Complemento" />
+                <InputNumber type="text" placeholder="Número" />
+                <InputComplement type="text" placeholder="Complemento" />
               </div>
               <div>
-                <input type="text" placeholder="Bairro" />
-                <input type="text" placeholder="Cidade" />
-                <input type="text" placeholder="UF" />
+                <InputNeighborhood type="text" placeholder="Bairro" />
+                <InputCity type="text" placeholder="Cidade" />
+                <InputUF type="text" placeholder="UF" />
               </div>
             </GridForm>
           </Form>
@@ -54,8 +71,13 @@ export function Checkout() {
             
           <Paymment>
             <Title>
-              <h2>Pagamento</h2>
-              <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+              <div>
+                <CurrencyDollar size={24} color="#8047F8" />
+              </div>
+              <div>
+                <h2>Pagamento</h2>
+                <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+              </div>
             </Title>
 
             <PaymmentMethods>
@@ -89,13 +111,36 @@ export function Checkout() {
           </Paymment>
         </FormContainer>
 
-        <Summary>
+        <SummaryContainer>
           <SummaryTitle>Cafés selecionados</SummaryTitle>
 
-          <div>
-            teste
-          </div>
-        </Summary>
+          <Summary>
+            <CartItem />
+            <CartItem />
+            
+            <Subtotal>
+              <SubtotalInfo>
+                <div>
+                  <p>Total  de itens</p>
+                  <h3>R$ 29,70</h3>
+                </div>
+                
+                <div>
+                  <p>Entrega</p>
+                  <h3>R$ 3,50</h3>
+                </div>
+
+                <div>
+                  <h2>Total</h2>
+                  <h2>R$ 33,20</h2>
+                </div>
+              </SubtotalInfo>
+              <button>
+                CONFIRMAR PEDIDO
+              </button>
+            </Subtotal>
+          </Summary>
+        </SummaryContainer>
       </Content>
       
     </CheckoutContainer>
